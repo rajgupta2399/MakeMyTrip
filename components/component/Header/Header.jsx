@@ -77,7 +77,7 @@ export default function Header() {
   return (
     <header
       className={`${
-        theme === "light" ? "bg-white text-gray-900" : "#1D232A text-white"
+        theme === "light" ? "bg-white #1D232A" : "#1D232A text-white"
       }  shadow-lg`}
     >
       <nav
@@ -110,7 +110,7 @@ export default function Header() {
           <Popover className="relative">
             <PopoverButton
               className={`flex items-center gap-x-1 text-sm font-semibold leading-6 ${
-                theme === "light" ? "text-gray-900" : "text-white"
+                theme === "light" ? "#1D232A" : "text-white"
               }`}
             >
               Product
@@ -133,7 +133,7 @@ export default function Header() {
           <a
             href="#"
             className={`text-sm font-semibold leading-6 ${
-              theme === "light" ? "text-gray-900" : "text-white"
+              theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
             Features
@@ -141,7 +141,7 @@ export default function Header() {
           <a
             href="#"
             className={`text-sm font-semibold leading-6 ${
-              theme === "light" ? "text-gray-900" : "text-white"
+              theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
             Marketplace
@@ -149,7 +149,7 @@ export default function Header() {
           <a
             href="#"
             className={`text-sm font-semibold leading-6 ${
-              theme === "light" ? "text-gray-900" : "text-white"
+              theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
             Company
@@ -163,7 +163,7 @@ export default function Header() {
             className="p-2"
           >
             {theme === "light" ? (
-              <MoonIcon className="h-6 w-6 text-gray-900" />
+              <MoonIcon className="h-6 w-6 #1D232A" />
             ) : (
               <SunIcon className="h-6 w-6 text-white" />
             )}

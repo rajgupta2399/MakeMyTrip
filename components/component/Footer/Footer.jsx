@@ -1,8 +1,18 @@
+"use client"; // Ensure this is a client component
+
+import { useTheme } from "next-themes";
 import { Footer } from "flowbite-react";
 
 export function BootomFooter() {
+  const { theme } = useTheme(); // Get the current theme
+
   return (
-    <Footer container>
+    <Footer
+      container
+      className={`${
+        theme === "dark" ? "bg-[#1D232A] text-white" : "bg-white text-gray-900"
+      }`}
+    >
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <Footer.Brand
