@@ -4,10 +4,6 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import {
   Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   Popover,
   PopoverButton,
   PopoverGroup,
@@ -62,10 +58,6 @@ const products = [
     icon: ArrowPathIcon,
   },
 ];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -83,7 +75,11 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-900">
+    <header
+      className={`${
+        theme === "light" ? "bg-white text-gray-900" : "#1D232A text-white"
+      }  shadow-lg`}
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -102,7 +98,9 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white"
+            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 ${
+              theme === "light" ? "text-gray-700" : "text-white"
+            }`}
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -110,33 +108,49 @@ export default function Header() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+            <PopoverButton
+              className={`flex items-center gap-x-1 text-sm font-semibold leading-6 ${
+                theme === "light" ? "text-gray-900" : "text-white"
+              }`}
+            >
               Product
               <ChevronDownIcon
                 aria-hidden="true"
-                className="h-5 w-5 flex-none text-gray-400 dark:text-gray-200"
+                className={`h-5 w-5 flex-none ${
+                  theme === "light" ? "text-gray-400" : "text-gray-200"
+                }`}
               />
             </PopoverButton>
-            <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 dark:bg-gray-800">
+            <PopoverPanel
+              className={`absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-gray-900/5 ${
+                theme === "light" ? "bg-white" : "bg-gray-800"
+              }`}
+            >
               {/* Product panel */}
             </PopoverPanel>
           </Popover>
 
           <a
             href="#"
-            className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+            className={`text-sm font-semibold leading-6 ${
+              theme === "light" ? "text-gray-900" : "text-white"
+            }`}
           >
             Features
           </a>
           <a
             href="#"
-            className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+            className={`text-sm font-semibold leading-6 ${
+              theme === "light" ? "text-gray-900" : "text-white"
+            }`}
           >
             Marketplace
           </a>
           <a
             href="#"
-            className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+            className={`text-sm font-semibold leading-6 ${
+              theme === "light" ? "text-gray-900" : "text-white"
+            }`}
           >
             Company
           </a>
@@ -146,12 +160,12 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button
             onClick={toggleTheme}
-            className="p-2 text-gray-900 dark:text-white"
+            className="p-2"
           >
             {theme === "light" ? (
-              <MoonIcon className="h-6 w-6" />
+              <MoonIcon className="h-6 w-6 text-gray-900" />
             ) : (
-              <SunIcon className="h-6 w-6" />
+              <SunIcon className="h-6 w-6 text-white" />
             )}
           </button>
         </div>
