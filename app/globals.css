@@ -68,6 +68,7 @@
     --background: 0 0% 100%; /* Light theme background #FFFFFF */
     --foreground: 210 10% 15%; /* Light theme text color #1f2937 (dark gray) */
     --radius: 0.5rem;
+    --font-mont: 'Montserrat', sans-serif;
   }
 
   .dark {
@@ -77,5 +78,6 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-mont);
   }
 }
