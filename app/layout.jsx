@@ -3,6 +3,7 @@ import ThemeProvide from "../components/component/Header/ThemeProvide";
 import ThemeSwitcher from "@/components/component/Header/ThemeSwitcher";
 import Header from "@/components/component/Header/Header";
 import { Montserrat } from "next/font/google";
+import { BootomFooter } from "@/components/component/Footer/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
           <Header />
           <ThemeSwitcher />
           {children}
+          <BootomFooter/>
         </ThemeProvide>
       </body>
     </html>
