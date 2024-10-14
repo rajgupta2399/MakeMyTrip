@@ -62,3 +62,20 @@
     @apply bg-background text-foreground;
   }
 } */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Light theme background #FFFFFF */
+    --foreground: 210 10% 15%; /* Light theme text color #1f2937 (dark gray) */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 217 15% 15%; /* Dark theme background #1D232A */
+    --foreground: 0 0% 100%; /* Dark theme text color white */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
