@@ -14,15 +14,7 @@ const ThemeSwitcher = () => {
     return null;
   }
 
-  return (
-    <div>
-      The current theme is: {theme}
-      <br />
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <br />
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default ThemeSwitcher;
