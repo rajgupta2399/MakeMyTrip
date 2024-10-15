@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <Header />
           <ThemeSwitcher />
           {children}
-          <BootomFooter/>
+          <BootomFooter />
         </ThemeProvide>
       </body>
     </html>
