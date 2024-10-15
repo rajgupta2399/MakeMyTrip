@@ -25,6 +25,7 @@ import {
 } from "@heroicons/react/20/solid";
 import MoonIcon from "@/components/ui/MoonIcon";
 import SunIcon from "@/components/ui/SunIcon";
+import Link from "next/link";
 
 const products = [
   {
@@ -89,8 +90,8 @@ export default function Header() {
             <span className="sr-only">Your Company</span>
             <img
               alt=""
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
+              src="https://pngimagesfree.com/wp-content/uploads/Make-My-Trip-Logo-PNG@.png"
+              className=" h-10 w-auto"
             />
           </a>
         </div>
@@ -113,13 +114,7 @@ export default function Header() {
                 theme === "light" ? "#1D232A" : "text-white"
               }`}
             >
-              Product
-              <ChevronDownIcon
-                aria-hidden="true"
-                className={`h-5 w-5 flex-none ${
-                  theme === "light" ? "text-gray-400" : "text-gray-200"
-                }`}
-              />
+              <Link href={"/Flights/"}>FLIGHTS</Link>
             </PopoverButton>
             <PopoverPanel
               className={`absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-gray-900/5 ${
@@ -136,7 +131,7 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
-            Features
+            <Link href={"/Hotels/"}>HOTELS</Link>
           </a>
           <a
             href="#"
@@ -144,7 +139,7 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
-            Marketplace
+            <Link href={"/Trains/"}>TRAIN</Link>
           </a>
           <a
             href="#"
@@ -152,16 +147,13 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
-            Company
+            <Link href={"/Homestays/"}>HOMESTAYS</Link>
           </a>
         </PopoverGroup>
 
         {/* Theme Switcher Icon */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <button
-            onClick={toggleTheme}
-            className="p-2"
-          >
+          <button onClick={toggleTheme} className="p-2">
             {theme === "light" ? (
               <MoonIcon className="h-6 w-6 #1D232A" />
             ) : (
