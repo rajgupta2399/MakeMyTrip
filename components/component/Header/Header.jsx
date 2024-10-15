@@ -26,6 +26,8 @@ import {
 import MoonIcon from "@/components/ui/MoonIcon";
 import SunIcon from "@/components/ui/SunIcon";
 import Link from "next/link";
+import Image from "next/image";
+import PlaneImage from "../../../public/Assets/plane.png";
 
 const products = [
   {
@@ -114,7 +116,10 @@ export default function Header() {
                 theme === "light" ? "#1D232A" : "text-white"
               }`}
             >
-              <Link href={"/Flights/"}>FLIGHTS</Link>
+              <Link href={"/Flights/"} className=" flex flex-col justify-center items-center gap-2 text-[12px]">
+                <Image src={PlaneImage} width={32} height={32} />
+                FLIGHTS
+              </Link>
             </PopoverButton>
             <PopoverPanel
               className={`absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-gray-900/5 ${
