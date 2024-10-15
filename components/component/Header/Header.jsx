@@ -28,6 +28,9 @@ import SunIcon from "@/components/ui/SunIcon";
 import Link from "next/link";
 import Image from "next/image";
 import PlaneImage from "../../../public/Assets/plane.png";
+import HotelImage from "../../../public/Assets/hotel.png";
+import TrainImage from "../../../public/Assets/train.png";
+import HomeImage from "../../../public/Assets/home.png";
 
 const products = [
   {
@@ -116,7 +119,10 @@ export default function Header() {
                 theme === "light" ? "#1D232A" : "text-white"
               }`}
             >
-              <Link href={"/Flights/"} className=" flex flex-col justify-center items-center gap-2 text-[12px]">
+              <Link
+                href={"/Flights/"}
+                className=" flex flex-col justify-center items-center gap-2 text-[12px]"
+              >
                 <Image src={PlaneImage} width={32} height={32} />
                 FLIGHTS
               </Link>
@@ -136,7 +142,13 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
-            <Link href={"/Hotels/"}>HOTELS</Link>
+            <Link
+              href={"/Hotels/"}
+              className=" flex flex-col justify-center items-center gap-2 text-[12px]"
+            >
+              <Image src={HotelImage} width={32} height={32} />
+              HOTELS
+            </Link>
           </a>
           <a
             href="#"
@@ -144,7 +156,13 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
-            <Link href={"/Trains/"}>TRAIN</Link>
+            <Link
+              href={"/Trains/"}
+              className=" flex flex-col justify-center items-center gap-2 text-[12px]"
+            >
+              <Image src={TrainImage} width={32} height={32} />
+              TRAINS
+            </Link>
           </a>
           <a
             href="#"
@@ -152,7 +170,13 @@ export default function Header() {
               theme === "light" ? "#1D232A" : "text-white"
             }`}
           >
-            <Link href={"/Homestays/"}>HOMESTAYS</Link>
+            <Link
+              href={"/Homestays/"}
+              className=" flex flex-col justify-center items-center gap-2 text-[12px]"
+            >
+              <Image src={HomeImage} width={32} height={32} />
+              HOMESTAYS
+            </Link>
           </a>
         </PopoverGroup>
 
