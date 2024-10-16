@@ -33,8 +33,8 @@ import Link from "next/link";
 import Image from "next/image";
 import PlaneImage from "../../../public/Assets/plane.png";
 import HotelImage from "../../../public/Assets/hotel.png";
-import TrainImage from "../../../public/Assets/train.png";
-import HomeImage from "../../../public/Assets/home.png";
+import TrainImage from "../../../public/Assets/train2.png";
+import HomeImage from "../../../public/Assets/homestay.png";
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -127,7 +127,7 @@ export default function Header() {
           >
             <Link
               href={"/Hotels/"}
-              className=" flex flex-col justify-center items-center gap-2 text-[12px] font-semibold"
+              className=" flex flex-col justify-center items-center gap-2 text-[12px] font-bold"
             >
               <Image src={HotelImage} width={32} height={32} />
               HOTELS
