@@ -37,16 +37,41 @@ import TrainImage from "../../../public/Assets/train2.png";
 import HomeImage from "../../../public/Assets/homestay.png";
 
 const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
+  {
+    name: "Analytics",
+    description: "Get a better understanding of your traffic",
+    href: "#",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Engagement",
+    description: "Speak directly to your customers",
+    href: "#",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Security",
+    description: "Your customers’ data will be safe and secure",
+    href: "#",
+    icon: FingerPrintIcon,
+  },
+  {
+    name: "Integrations",
+    description: "Connect with third-party tools",
+    href: "#",
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: "Automations",
+    description: "Build strategic funnels that will convert",
+    href: "#",
+    icon: ArrowPathIcon,
+  },
+];
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
+  { name: "Contact sales", href: "#", icon: PhoneIcon },
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -119,20 +144,15 @@ export default function Header() {
             </PopoverPanel>
           </Popover>
 
-          <a
-            href="#"
-            className={`text-sm font-semibold leading-6 ${
+          <Link
+            href={"/Hotels/"}
+            className={`${
               theme === "light" ? "#1D232A" : "text-white"
-            }`}
+            } flex flex-col justify-center items-center gap-2 text-[12px] leading-6 font-bold`}
           >
-            <Link
-              href={"/Hotels/"}
-              className=" flex flex-col justify-center items-center gap-2 text-[12px] font-bold"
-            >
-              <Image src={HotelImage} width={32} height={32} />
-              HOTELS
-            </Link>
-          </a>
+            <Image src={HotelImage} width={32} height={32} />
+            HOTELS
+          </Link>
           <a
             href="#"
             className={`text-sm font-semibold leading-6 ${
@@ -182,13 +202,19 @@ export default function Header() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel
+          className={`${
+            theme === "light"
+              ? "bg-white text-[#1D232A]"
+              : "bg-[#1D232A] text-white"
+          }  fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10`}
+        >
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                src="https://pngimagesfree.com/wp-content/uploads/Make-My-Trip-Logo-PNG@.png"
                 className="h-8 w-auto"
               />
             </a>
@@ -205,52 +231,78 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                    Product
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="h-5 w-5 flex-none group-data-[open]:rotate-180"
-                    />
+                  <DisclosureButton
+                    className={`${
+                      theme === "light"
+                        ? "bg-white text-[#1D232A]"
+                        : "bg-[#1D232A] text-white"
+                    } "group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7`}
+                  >
+                    <Link
+                      href={"/Flights/"}
+                      className=" flex justify-center items-center gap-14 text-[12px] font-bold"
+                    >
+                      <Image src={PlaneImage} width={32} height={32} />
+                      FLIGHTS
+                    </Link>
                   </DisclosureButton>
-                  <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.name}
-                      </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
                 </Disclosure>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                <Link
+                  href={"/Hotels/"}
+                  className={`${
+                    theme === "light"
+                      ? "bg-white text-[#1D232A]"
+                      : "bg-[#1D232A] text-white"
+                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  <Image src={HotelImage} width={32} height={32} />
+                  HOTELS
+                </Link>
+                <Link
+                  href={"/Trains/"}
+                  className={`${
+                    theme === "light"
+                      ? "bg-white text-[#1D232A]"
+                      : "bg-[#1D232A] text-white"
+                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  <Image src={TrainImage} width={32} height={32} />
+                  TRAINS
+                </Link>
+                <Link
+                  href={"/Homestays/"}
+                  className={`${
+                    theme === "light"
+                      ? "bg-white text-[#1D232A]"
+                      : "bg-[#1D232A] text-white"
+                  } flex items-center gap-14 text-[12px] font-bold -mx-3 rounded-lg px-3 py-2 `}
                 >
-                  Company
-                </a>
+                  <Image src={HomeImage} width={32} height={32} />
+                  TRAINS
+                </Link>
               </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+              <div className="flex justify-between align-middle items-center">
+                <div className="py-6">
+                  <a
+                    href="#"
+                    className={`${
+                      theme === "light"
+                        ? "bg-white text-[#1D232A]"
+                        : "bg-[#1D232A] text-white"
+                    }  -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 `}
+                  >
+                    Log in
+                  </a>
+                </div>
+                <div className="lg:flex lg:flex-1 lg:justify-end">
+                  <button onClick={toggleTheme} className="p-2">
+                    {theme === "light" ? (
+                      <MoonIcon className="h-6 w-6 #1D232A" />
+                    ) : (
+                      <SunIcon className="h-6 w-6 text-white" />
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
