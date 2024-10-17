@@ -21,3 +21,5 @@ This is a clone of the **MakeMyTrip** app built using the **Next.js** framework.
 - 🖌️ [Shadcn/UI](https://shadcn.dev/)
 - 💡 [Tailwind UI](https://tailwindui.com/)
 - 🎨 [Flowbite UI](https://flowbite.com/)
+- ✨ [Accertinity UI](https://ui.aceternity.com/)
+- 🖌️ [React Bootstrap](https://react-bootstrap.netlify.app/)

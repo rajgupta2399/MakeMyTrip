@@ -11,7 +11,7 @@ import AnimatedText from "../Animation/AnimatedText";
 
 const Banner = () => {
   return (
-    <section className="slider">
+    <section className="slider relative">
       <Carousel variant="" interval={5000} pause={false}>
 
       <Carousel.Item className="carousel">
